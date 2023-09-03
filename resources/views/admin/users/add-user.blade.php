@@ -1,0 +1,53 @@
+@extends('admin.master')
+@section('title')
+    Add Users
+@endsection
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Add User</h3></div>
+                    <div class="card-body">
+                        <form action="{{route('users.store')}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" name="name" type="text" placeholder="Enter User's Name" />
+                                        <label for="inputFirstName">Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputPassword" name="email" type="email" placeholder="Product Price" />
+                                        <label for="productPrice">Email</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <div class="form-floating mb-3 mb-md-0">
+                                        <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Enter Password" />
+                                        <label for="categoryName">Password</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="mt-4 mb-0">
+                                <input type="submit" class="btn btn-outline-success text-center" value="Create User">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
